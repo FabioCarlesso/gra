@@ -10,10 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @Entity
+@AllArgsConstructor
 public class Movie {
 
     @Id
@@ -21,6 +23,7 @@ public class Movie {
     private Integer id;
     private Integer movieYear;
     private String title;
+    private Boolean isWinner;
 
     @ManyToMany
     @JoinTable(name = "MOVIE_STUDIO")
