@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fabiocarlesso.gra.domain.Movie;
 import com.fabiocarlesso.gra.domain.dto.MovieDTO;
+import com.fabiocarlesso.gra.domain.dto.MovieProducerMinMaxDTO;
 import com.fabiocarlesso.gra.service.MovieService;
 
 @RestController
@@ -41,4 +42,9 @@ public class MovieResource {
         return ResponseEntity.ok().body(listDto);
     }
     
+    @GetMapping(value="/interval")
+    public ResponseEntity<MovieProducerMinMaxDTO> findMinMaxInterval(){
+        MovieProducerMinMaxDTO objDto = service.findByMovieWinnerInterval();
+        return ResponseEntity.ok().body(objDto);
+    }
 }

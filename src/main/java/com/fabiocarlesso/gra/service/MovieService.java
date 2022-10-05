@@ -1,5 +1,6 @@
 package com.fabiocarlesso.gra.service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -8,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fabiocarlesso.gra.domain.Movie;
+import com.fabiocarlesso.gra.domain.dto.MovieProducerIntervalDTO;
+import com.fabiocarlesso.gra.domain.dto.MovieProducerMinMaxDTO;
 import com.fabiocarlesso.gra.repository.MovieRepository;
 import com.fabiocarlesso.gra.service.exception.ObjectNotFoundException;
 
@@ -19,6 +22,16 @@ public class MovieService {
 
     public List<Movie> findByWinner(){
         return repo.findByIsWinnerTrueOrderByMovieYearAsc();
+    }
+
+    public MovieProducerMinMaxDTO findByMovieWinnerInterval(){
+        List<MovieProducerIntervalDTO> result = repo.findProducersInterval();
+        MovieProducerMinMaxDTO minMaxIntervalDTO = new MovieProducerMinMaxDTO();
+        minMaxIntervalDTO.getMin().add(result.get(0));
+        minMaxIntervalDTO.getMin().add(result.get(1));
+        minMaxIntervalDTO.getMax().add(result.get(result.size()-2));
+        minMaxIntervalDTO.getMax().add(result.get(result.size()-1));
+        return minMaxIntervalDTO;
     }
 
     public Movie find(Integer id) {
