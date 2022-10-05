@@ -22,7 +22,13 @@
 - Todos os filmes ganhadores por ordem decrescente
 
 # EndPoints
-  1. Funcionalidade: Todas as informações do csv importatado na base, formato em JSon
+1. Leitura de csv e importação para base H2
+- JDBC URL: jdbc:h2:mem:gradb
+- User Name: sa
+- Password: (SEM PASSWORD)
+- URL: /h2-console/ (Ex.: http://localhost:8090/h2-console/)
+
+2. Funcionalidade: Todas as informações do csv importatado na base, formato em JSon
 - Method: GET
 - URL: /v1/movies (Ex.: http://localhost:8090/v1/movies)
 
@@ -47,7 +53,7 @@
             }
         ]
 
-2. Funcionalidade: Produtores com maior e menor intervalo entre dois prêmios consecutivos
+3. Funcionalidade: Produtores com maior e menor intervalo entre dois prêmios consecutivos
 - Method: GET
 - URL: /v1/movies/interval (Ex.: http://localhost:8090/v1/movies/interval)
 
@@ -82,7 +88,7 @@
             ]
         }
 
-1. Todos os filmes ganhadores por ordem decrescente
+4. Todos os filmes ganhadores por ordem decrescente
 - Method: GET
 - URL: /v1/movies/winners (Ex.: http://localhost:8090/v1/movies/winners)
 
