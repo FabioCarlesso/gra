@@ -1,4 +1,4 @@
-package com.fabiocarlesso.gra.resource.rest;
+package com.fabiocarlesso.gra.controller.rest;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,7 +17,7 @@ import com.fabiocarlesso.gra.service.MovieService;
 
 @RestController
 @RequestMapping(value="/v1/movies")
-public class MovieResource {
+public class MovieController {
     
     @Autowired
     private MovieService service;

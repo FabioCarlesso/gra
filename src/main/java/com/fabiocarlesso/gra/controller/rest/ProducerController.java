@@ -1,4 +1,4 @@
-package com.fabiocarlesso.gra.resource.rest;
+package com.fabiocarlesso.gra.controller.rest;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,7 +16,7 @@ import com.fabiocarlesso.gra.service.ProducerService;
 
 @RestController
 @RequestMapping(value="/v1/producers")
-public class ProducerResource {
+public class ProducerController {
     
     @Autowired
     private ProducerService service;
