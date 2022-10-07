@@ -30,8 +30,6 @@ public class MovieControllerIntegrationTest {
 
     private String path;
 
-    private TestRestTemplate testRestTemplate;
-
     @BeforeEach
     private void init() {
         this.path = HOST+port+MOVIES_PATH;
