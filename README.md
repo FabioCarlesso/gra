@@ -15,6 +15,9 @@
 # Execução
 - mvn spring-boot:run
 
+# Execução de Teste
+- mvn test
+
 # Funcionalidades
 - Leitura de csv e importação para base H2
 - Todas as informações do csv importatado na base, formato em JSon
@@ -61,29 +64,29 @@
             "min": [
                 {
                     "producerName": "Joel Silver",
-                    "interval": 1991,
                     "previousWin": 1990,
-                    "followingWin": 1
+                    "followingWin": 1991,
+                    "interval": 1
                 },
                 {
                     "producerName": "Bo Derek",
-                    "interval": 1990,
                     "previousWin": 1984,
-                    "followingWin": 6
+                    "followingWin": 1990,
+                    "interval": 6
                 }
             ],
             "max": [
                 {
                     "producerName": "Buzz Feitshans",
-                    "interval": 1994,
                     "previousWin": 1985,
-                    "followingWin": 9
+                    "followingWin": 1994,
+                    "interval": 9
                 },
                 {
                     "producerName": "Matthew Vaughn",
-                    "interval": 2015,
                     "previousWin": 2002,
-                    "followingWin": 13
+                    "followingWin": 2015,
+                    "interval": 13
                 }
             ]
         }
