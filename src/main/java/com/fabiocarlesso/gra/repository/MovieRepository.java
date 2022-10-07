@@ -15,8 +15,8 @@ public interface MovieRepository extends JpaRepository<Movie, Integer> {
     List<Movie> findByIsWinnerTrueOrderByMovieYearAsc();
 
     @Query("SELECT new com.fabiocarlesso.gra.domain.dto.MovieProducerIntervalDTO(p.producerName, "
+                + "MIN(m.movieYear), "            
                 + "MAX(m.movieYear), "
-                + "MIN(m.movieYear), "
                 + "(MAX(m.movieYear) - MIN(m.movieYear))) "
             + "FROM Movie as m "
             + "INNER JOIN m.producers p "

@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MovieProducerIntervalDTO {
     private String producerName;
-    private Integer interval;
     private Integer previousWin;
     private Integer followingWin;
+    private Integer interval;
 }
